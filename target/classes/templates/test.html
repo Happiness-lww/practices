@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><!--添加thymeleaf的语法约束，可以在此网站看到-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--${}是thymeleaf中取得值的语法，“th:text”是将html中所得的参数转化为指定格式，这里是text-->
+<div th:text="${msg}"></div>
+
+<!--“th:utext”是不转译html中所得的参数，其实就是特殊情况：信息里包含html的关键字了-->
+<div th:utext="${msg2}"></div>
+
+<hr>
+
+<!--“th:each”用str遍历获取html中的数组元素，th:text将它转译为text输出-->
+<div th:each="str:${arr}"th:text="${str}"></div>
+<!--另一种写法-->
+<div th:each="str:${arr}"> [[ ${str} ]]</div>
+
+</body>
+</html>
